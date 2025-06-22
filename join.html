@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 메타 정보 -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 - HODU</title>
+    <meta name="description" content="HODU 오픈마켓 회원가입" />
+    
+    <!-- 스타일시트 -->
+    <link 
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" 
+      rel="stylesheet" 
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/join.css" />
+  </head>
+
+  <body>
+    <!-- ========================================
+        회원가입 페이지 메인 컨테이너
+    ======================================== -->
+    <div class="join-container">
+      
+      <!-- ========================================
+          로고 섹션
+      ======================================== -->
+      <div class="join-logo">
+        <a href="index.html">
+          <img src="img/Logo-hodu.png" alt="HODU" class="join-logo-img" />
+        </a>
+      </div>
+
+      <!-- ========================================
+          회원가입 폼 래퍼
+      ======================================== -->
+      <div class="join-wrapper">
+        
+        <!-- 탭 컨테이너 (구매회원/판매회원 선택) -->
+        <div class="tab-container">
+          <button class="tab-button active" data-tab="buyer">
+            구매회원가입
+          </button>
+          <button class="tab-button" data-tab="seller">
+            판매회원가입
+          </button>
+        </div>
+
+        <!-- ========================================
+            회원가입 폼 박스
+        ======================================== -->
+        <div class="join-box">
+          <div class="form-container">
+            
+            <!-- ========================================
+                구매회원 가입 폼
+            ======================================== -->
+            <form class="join-form active" id="buyer-form" novalidate>
+              
+              <!-- 아이디 입력 -->
+              <div class="form-group">
+                <label class="form-label">아이디</label>
+                <div class="form-group row">
+                  <input 
+                    type="text" 
+                    name="username" 
+                    class="input-field"
+                    autocomplete="username"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="check-button"
+                    onclick="checkUsername('buyer')"
+                  >
+                    중복확인
+                  </button>
+                </div>
+                <div id="buyer-username-message"></div>
+              </div>
+
+              <!-- 비밀번호 입력 -->
+              <div class="form-group">
+                <label class="form-label">비밀번호</label>
+                <div class="password-container">
+                  <input 
+                    type="password" 
+                    name="password" 
+                    class="input-field"
+                    autocomplete="new-password" 
+                    required
+                  />
+                  <span
+                    class="password-check-icon"
+                    id="buyer-password-check"
+                  ></span>
+                </div>
+                <div id="buyer-password-message"></div>
+              </div>
+
+              <!-- 비밀번호 재확인 -->
+              <div class="form-group">
+                <label class="form-label">비밀번호 재확인</label>
+                <div class="password-container">
+                  <input
+                    type="password"
+                    name="password_confirm"
+                    class="input-field"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <span
+                    class="password-check-icon"
+                    id="buyer-password-confirm-check"
+                  ></span>
+                </div>
+                <div id="buyer-password-confirm-message"></div>
+              </div>
+
+              <!-- 이름 입력 -->
+              <div class="form-group">
+                <label class="form-label">이름</label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  class="input-field"
+                  autocomplete="name"
+                  required
+                />
+                <div id="buyer-name-message"></div>
+              </div>
+
+              <!-- 휴대폰 번호 입력 -->
+              <div class="form-group">
+                <label class="form-label">휴대폰 번호</label>
+                <div class="phone-group">
+                  <select name="phone_prefix" class="phone-select">
+                    <option value="010">010</option>
+                    <option value="011">011</option>
+                    <option value="016">016</option>
+                    <option value="017">017</option>
+                    <option value="018">018</option>
+                    <option value="019">019</option>
+                  </select>
+                  <input
+                    type="text"
+                    name="phone_middle"
+                    class="input-field phone-input"
+                    maxlength="4"
+                    placeholder="1234"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="phone_last"
+                    class="input-field phone-input"
+                    maxlength="4"
+                    placeholder="5678"
+                    required
+                  />
+                </div>
+                <div id="buyer-phone-message"></div>
+              </div>
+              
+            </form>
+
+            <!-- ========================================
+                판매회원 가입 폼
+            ======================================== -->
+            <form class="join-form" id="seller-form" novalidate>
+              
+              <!-- 아이디 입력 -->
+              <div class="form-group">
+                <label class="form-label">아이디</label>
+                <div class="form-group row">
+                  <input 
+                    type="text" 
+                    name="username" 
+                    class="input-field"
+                    autocomplete="username"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="check-button"
+                    onclick="checkUsername('seller')"
+                  >
+                    중복확인
+                  </button>
+                </div>
+                <div id="seller-username-message"></div>
+              </div>
+
+              <!-- 비밀번호 입력 -->
+              <div class="form-group">
+                <label class="form-label">비밀번호</label>
+                <div class="password-container">
+                  <input 
+                    type="password" 
+                    name="password" 
+                    class="input-field"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <span
+                    class="password-check-icon"
+                    id="seller-password-check"
+                  ></span>
+                </div>
+                <div id="seller-password-message"></div>
+              </div>
+
+              <!-- 비밀번호 재확인 -->
+              <div class="form-group">
+                <label class="form-label">비밀번호 재확인</label>
+                <div class="password-container">
+                  <input
+                    type="password"
+                    name="password_confirm"
+                    class="input-field"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <span
+                    class="password-check-icon"
+                    id="seller-password-confirm-check"
+                  ></span>
+                </div>
+                <div id="seller-password-confirm-message"></div>
+              </div>
+
+              <!-- 이름 입력 -->
+              <div class="form-group">
+                <label class="form-label">이름</label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  class="input-field"
+                  autocomplete="name"
+                  required
+                />
+                <div id="seller-name-message"></div>
+              </div>
+
+              <!-- 휴대폰 번호 입력 -->
+              <div class="form-group">
+                <label class="form-label">휴대폰 번호</label>
+                <div class="phone-group">
+                  <select name="phone_prefix" class="phone-select">
+                    <option value="010">010</option>
+                    <option value="011">011</option>
+                    <option value="016">016</option>
+                    <option value="017">017</option>
+                    <option value="018">018</option>
+                    <option value="019">019</option>
+                  </select>
+                  <input
+                    type="text"
+                    name="phone_middle"
+                    class="input-field phone-input"
+                    maxlength="4"
+                    placeholder="1234"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="phone_last"
+                    class="input-field phone-input"
+                    maxlength="4"
+                    placeholder="5678"
+                    required
+                  />
+                </div>
+                <div id="seller-phone-message"></div>
+              </div>
+              
+            </form>
+            
+          </div>
+        </div>
+
+        <!-- ========================================
+            약관 동의 섹션
+        ======================================== -->
+        <div class="agreement-section">
+          <div class="checkbox-group">
+            <input 
+              type="checkbox" 
+              id="agreement-checkbox" 
+              class="checkbox"
+              required
+            />
+            <label for="agreement-checkbox" class="checkbox-label">
+              호두샵의 
+              <span class="underline bold">이용약관</span> 및
+              <span class="underline bold">개인정보처리방침</span>에 대한 내용을
+              확인하였고 동의합니다.
+            </label>
+          </div>
+        </div>
+
+        <!-- ========================================
+            가입하기 버튼
+        ======================================== -->
+        <button
+          type="button"
+          class="join-submit-btn"
+          disabled
+          onclick="handleJoinSubmit()"
+        >
+          가입하기
+        </button>
+        
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/join.js"></script>
+  </body>
+</html>
