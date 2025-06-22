@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 메타 정보 -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품상세 - HODU</title>
+    <meta name="description" content="HODU 오픈마켓 상품 상세페이지" />
+    
+    <!-- 스타일시트 -->
+    <link
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+  </head>
+
+  <body>
+    <!-- ========================================
+        헤더 - 네비게이션 바
+    ======================================== -->
+    <header class="header">
+      <nav class="nav">
+        <!-- 로고 -->
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/Logo-hodu.png" alt="HODU" />
+          </a>
+        </div>
+
+        <!-- 검색창 -->
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="상품을 검색해보세요!"
+            aria-label="상품 검색"
+          />
+          <button type="button" class="search-btn" aria-label="검색하기">
+            <img src="img/search.svg" alt="" />
+          </button>
+        </div>
+
+        <!-- 네비게이션 아이콘들 (장바구니, 로그인/마이페이지) -->
+        <div class="nav-icons">
+          <a href="cart.html" class="icon-btn">
+            <img src="img/icon-shopping-cart.svg" alt="장바구니" />
+            <span class="icon-text">장바구니</span>
+          </a>
+          <a href="login.html" class="icon-btn">
+            <img src="img/icon-user.svg" alt="로그인" />
+            <span class="icon-text">로그인</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ========================================
+        메인 컨텐츠
+    ======================================== -->
+    <main class="main-content">
+      <div class="container">
+        
+        <!-- ========================================
+            상품 상세 정보 섹션
+        ======================================== -->
+        <section class="product-detail">
+          
+          <!-- 상품 이미지 -->
+          <div class="product-image">
+            <img 
+              src="" 
+              alt="상품 이미지" 
+              id="productImage" 
+              onerror="this.src='img/default-product.png'"
+            />
+          </div>
+
+          <!-- ========================================
+              상품 정보 및 주문 옵션
+          ======================================== -->
+          <div class="product-info">
+            
+            <!-- 기본 상품 정보 -->
+            <div class="product-basic-info">
+              <p class="seller-name" id="sellerName">판매자명</p>
+              <h1 class="product-title" id="productTitle">상품명</h1>
+              
+              <!-- 가격 정보 -->
+              <div class="price-info">
+                <span class="price" id="productPrice">17,500</span>
+                <span class="currency">원</span>
+              </div>
+              
+              <!-- 배송 정보 -->
+              <div class="shipping-info">
+                <span class="shipping-method">택배배송</span>
+                <span class="divider">/</span>
+                <span class="shipping-fee" id="shippingFee">무료배송</span>
+              </div>
+            </div>
+
+            <!-- ========================================
+                수량 선택 섹션
+            ======================================== -->
+            <div class="quantity-section">
+              <div class="quantity-controls">
+                <button 
+                  type="button" 
+                  class="quantity-btn minus" 
+                  id="minusBtn"
+                  aria-label="수량 감소"
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  class="quantity-input"
+                  id="quantityInput"
+                  value="1"
+                  min="1"
+                  max="99"
+                  aria-label="수량"
+                />
+                <button 
+                  type="button" 
+                  class="quantity-btn plus" 
+                  id="plusBtn"
+                  aria-label="수량 증가"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <!-- ========================================
+                총 금액 섹션
+            ======================================== -->
+            <div class="total-section">
+              <span class="total-label">총 상품 금액</span>
+              <div class="total-amount">
+                <span class="total-quantity" id="totalQuantity">
+                  총 수량 1개
+                </span>
+                <span class="total-price" id="totalPrice">17,500</span>
+                <span class="currency">원</span>
+              </div>
+            </div>
+
+            <!-- ========================================
+                액션 버튼들 (장바구니, 바로구매)
+            ======================================== -->
+            <div class="action-buttons">
+              <button 
+                type="button" 
+                class="btn-cart" 
+                id="addToCartBtn"
+                aria-label="장바구니에 담기"
+              >
+                장바구니
+              </button>
+              <button 
+                type="button" 
+                class="btn-buy" 
+                id="buyNowBtn"
+                aria-label="바로 구매하기"
+              >
+                바로 구매
+              </button>
+            </div>
+            
+          </div>
+        </section>
+
+        <!-- ========================================
+            상품 정보 탭 섹션
+        ======================================== -->
+        <section class="product-tabs">
+          
+          <!-- 탭 버튼들 -->
+          <div class="tab-buttons" role="tablist">
+            <button 
+              class="tab-btn active" 
+              data-tab="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="button-panel"
+            >
+              상품설명
+            </button>
+            <button 
+              class="tab-btn" 
+              data-tab="review"
+              role="tab"
+              aria-selected="false"
+              aria-controls="review-panel"
+            >
+              리뷰
+            </button>
+            <button 
+              class="tab-btn" 
+              data-tab="qna"
+              role="tab"
+              aria-selected="false"
+              aria-controls="qna-panel"
+            >
+              Q&A
+            </button>
+            <button 
+              class="tab-btn" 
+              data-tab="return"
+              role="tab"
+              aria-selected="false"
+              aria-controls="return-panel"
+            >
+              반품/교환정보
+            </button>
+          </div>
+
+          <!-- ========================================
+              탭 컨텐츠들
+          ======================================== -->
+          <div class="tab-content">
+            
+            <!-- 상품 설명 탭 -->
+            <div 
+              class="tab-panel active" 
+              id="button-panel"
+              role="tabpanel"
+              aria-labelledby="button-tab"
+            >
+              <div class="product-description" id="productDescription">
+                <!-- 상품 설명이 JavaScript로 동적 로드됩니다 -->
+              </div>
+            </div>
+
+            <!-- 리뷰 탭 -->
+            <div 
+              class="tab-panel" 
+              id="review-panel"
+              role="tabpanel"
+              aria-labelledby="review-tab"
+            >
+              <div class="review-content">
+                <p>리뷰 내용</p>
+                <!-- 추후 리뷰 시스템 구현 예정 -->
+              </div>
+            </div>
+
+            <!-- Q&A 탭 -->
+            <div 
+              class="tab-panel" 
+              id="qna-panel"
+              role="tabpanel"
+              aria-labelledby="qna-tab"
+            >
+              <div class="qna-content">
+                <p>Q&A 내용</p>
+                <!-- 추후 Q&A 시스템 구현 예정 -->
+              </div>
+            </div>
+
+            <!-- 반품/교환정보 탭 -->
+            <div 
+              class="tab-panel" 
+              id="return-panel"
+              role="tabpanel"
+              aria-labelledby="return-tab"
+            >
+              <div class="return-content">
+                <p>반품/교환정보</p>
+                <!-- 추후 반품/교환 정보 구현 예정 -->
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+      </div>
+    </main>
+
+    <!-- ========================================
+        푸터 - 사이트 정보
+    ======================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          
+          <!-- 푸터 상단 - 링크와 소셜 미디어 -->
+          <div class="footer-top">
+            <!-- 푸터 네비게이션 링크 -->
+            <nav class="footer-links" aria-label="푸터 링크">
+              <a href="#">호두샵 소개</a>
+              <span class="divider">|</span>
+              <a href="#">이용약관</a>
+              <span class="divider">|</span>
+              <a href="#" class="privacy">개인정보처리방침</a>
+              <span class="divider">|</span>
+              <a href="#">전자금융거래약관</a>
+              <span class="divider">|</span>
+              <a href="#">청소년보호정책</a>
+              <span class="divider">|</span>
+              <a href="#">제휴문의</a>
+            </nav>
+
+            <!-- 소셜 미디어 링크 -->
+            <div class="footer-social">
+              <a href="#" class="social-link" aria-label="인스타그램">
+                <img src="img/icon-insta.svg" alt="" />
+              </a>
+              <a href="#" class="social-link" aria-label="페이스북">
+                <img src="img/icon-fb.svg" alt="" />
+              </a>
+              <a href="#" class="social-link" aria-label="유튜브">
+                <img src="img/icon-yt.svg" alt="" />
+              </a>
+            </div>
+          </div>
+
+          <!-- 푸터 하단 - 회사 정보 -->
+          <div class="footer-bottom">
+            <div class="company-info">
+              <h3>(주)HODU SHOP</h3>
+              <address>
+                <p>제주특별자치도 제주시 동광고 137 제주코딩베이스캠프</p>
+                <p>사업자 번호 : 000-0000-0000 | 통신판매업</p>
+                <p>대표 : 김호두</p>
+              </address>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/detail.js"></script>
+  </body>
+</html>
