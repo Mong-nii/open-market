@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 메타 정보 -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 - HODU</title>
+    <meta name="description" content="HODU 오픈마켓 로그인" />
+    
+    <!-- 스타일시트 -->
+    <link 
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" 
+      rel="stylesheet" 
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+
+  <body>
+    <!-- ========================================
+        로그인 페이지 메인 컨테이너
+    ======================================== -->
+    <div class="login-container">
+      
+      <!-- ========================================
+          로고 섹션
+      ======================================== -->
+      <div class="login-logo">
+        <a href="index.html">
+          <img src="img/Logo-hodu.png" alt="HODU" class="login-logo-img" />
+        </a>
+      </div>
+
+      <!-- ========================================
+          로그인 폼 래퍼
+      ======================================== -->
+      <div class="login-wrapper">
+        
+        <!-- 탭 컨테이너 (구매회원/판매회원 선택) -->
+        <div class="tab-container">
+          <button class="tab-button active" data-tab="buyer">
+            구매회원 로그인
+          </button>
+          <button class="tab-button" data-tab="seller">
+            판매회원 로그인
+          </button>
+        </div>
+
+        <!-- ========================================
+            로그인 폼 박스
+        ======================================== -->
+        <div class="login-box">
+          <div class="form-container">
+            
+            <!-- 구매회원 로그인 폼 -->
+            <form class="login-form active" id="buyer-form" novalidate>
+              <input
+                type="text"
+                name="username"
+                class="input-field"
+                placeholder="아이디"
+                autocomplete="username"
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                class="input-field"
+                placeholder="비밀번호"
+                autocomplete="current-password"
+                required
+              />
+              <button type="submit" class="login-button">
+                로그인
+              </button>
+            </form>
+
+            <!-- 판매회원 로그인 폼 -->
+            <form class="login-form" id="seller-form" novalidate>
+              <input
+                type="text"
+                name="username"
+                class="input-field"
+                placeholder="아이디"
+                autocomplete="username"
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                class="input-field"
+                placeholder="비밀번호"
+                autocomplete="current-password"
+                required
+              />
+              <button type="submit" class="login-button">
+                로그인
+              </button>
+            </form>
+            
+          </div>
+        </div>
+
+        <!-- ========================================
+            하단 링크 (회원가입, 비밀번호 찾기)
+        ======================================== -->
+        <div class="bottom-links">
+          <a href="join.html">회원가입</a>
+          <span class="divider">|</span>
+          <a href="find-password.html">비밀번호 찾기</a>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/login.js"></script>
+  </body>
+</html>
