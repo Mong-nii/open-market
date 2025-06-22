@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 메타 정보 -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HODU - 오픈마켓</title>
+    <meta
+      name="description"
+      content="HODU 오픈마켓 - 다양한 상품을 만나보세요"
+    />
+
+    <!-- 스타일시트 -->
+    <link
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ========================================
+        헤더 - 네비게이션 바
+    ======================================== -->
+    <header class="header">
+      <nav class="nav">
+        <!-- 로고 -->
+        <h1 class="logo">
+          <a href="main.html">
+            <img src="img/Logo-hodu.png" alt="HODU 오픈마켓" />
+          </a>
+        </h1>
+
+        <!-- 검색창 -->
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="상품을 검색해보세요!"
+            aria-label="상품 검색"
+          />
+          <button class="search-btn" type="button" aria-label="검색하기">
+            <img src="img/search.svg" alt="" />
+          </button>
+        </div>
+
+        <!-- 네비게이션 아이콘들 (장바구니, 로그인/마이페이지) -->
+        <div class="nav-icons">
+          <a href="cart.html" class="icon-btn">
+            <img src="img/icon-shopping-cart.svg" alt="" />
+            <span class="icon-text">장바구니</span>
+          </a>
+          <a href="login.html" class="icon-btn">
+            <img src="img/icon-user.svg" alt="" />
+            <span class="icon-text">로그인</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ========================================
+        메인 배너 슬라이드
+    ======================================== -->
+    <section class="banner">
+      <!-- 이전 버튼 -->
+      <button class="banner-nav prev-btn" type="button" aria-label="이전 배너">
+        <img src="img/icon-swiper-1.svg" alt="" />
+      </button>
+
+      <!-- 배너 컨텐츠 -->
+      <div class="banner-content">
+        <a href="index.html" class="banner-link">
+          <img src="img/banner-1.jpg" alt="메인 배너" />
+        </a>
+      </div>
+
+      <!-- 다음 버튼 -->
+      <button class="banner-nav next-btn" type="button" aria-label="다음 배너">
+        <img src="img/icon-swiper-2.svg" alt="" />
+      </button>
+
+      <!-- 배너 인디케이터 -->
+      <div class="banner-indicators" role="tablist" aria-label="배너 슬라이드">
+        <button
+          class="indicator active"
+          data-slide="0"
+          role="tab"
+          aria-selected="true"
+          aria-label="첫 번째 배너"
+        ></button>
+        <button
+          class="indicator"
+          data-slide="1"
+          role="tab"
+          aria-selected="false"
+          aria-label="두 번째 배너"
+        ></button>
+        <button
+          class="indicator"
+          data-slide="2"
+          role="tab"
+          aria-selected="false"
+          aria-label="세 번째 배너"
+        ></button>
+        <button
+          class="indicator"
+          data-slide="3"
+          role="tab"
+          aria-selected="false"
+          aria-label="네 번째 배너"
+        ></button>
+        <button
+          class="indicator"
+          data-slide="4"
+          role="tab"
+          aria-selected="false"
+          aria-label="다섯 번째 배너"
+        ></button>
+      </div>
+    </section>
+
+    <!-- ========================================
+        메인 컨텐츠 - 상품 목록
+    ======================================== -->
+    <main class="main-content">
+      <div class="container">
+        <section class="products-section">
+          <!-- 상품 목록 제목 (스크린 리더용) -->
+          <h2 class="sr-only">상품 목록</h2>
+
+          <!-- 상품 그리드 (JavaScript로 동적 생성) -->
+          <div class="products-grid" id="products-grid">
+            <!-- 상품 카드들이 JavaScript로 동적으로 추가됩니다 -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ========================================
+        푸터 - 사이트 정보
+    ======================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- 푸터 상단 - 링크와 소셜 미디어 -->
+          <div class="footer-top">
+            <!-- 푸터 네비게이션 링크 -->
+            <nav class="footer-links" aria-label="푸터 링크">
+              <a href="#">호두샵 소개</a>
+              <span class="divider">|</span>
+              <a href="#">이용약관</a>
+              <span class="divider">|</span>
+              <a href="#" class="privacy">개인정보처리방침</a>
+              <span class="divider">|</span>
+              <a href="#">전자금융거래약관</a>
+              <span class="divider">|</span>
+              <a href="#">청소년보호정책</a>
+              <span class="divider">|</span>
+              <a href="#">제휴문의</a>
+            </nav>
+
+            <!-- 소셜 미디어 링크 -->
+            <div class="footer-social">
+              <a href="#" class="social-link" aria-label="인스타그램">
+                <img src="img/icon-insta.svg" alt="" />
+              </a>
+              <a href="#" class="social-link" aria-label="페이스북">
+                <img src="img/icon-fb.svg" alt="" />
+              </a>
+              <a href="#" class="social-link" aria-label="유튜브">
+                <img src="img/icon-yt.svg" alt="" />
+              </a>
+            </div>
+          </div>
+
+          <!-- 푸터 하단 - 회사 정보 -->
+          <div class="footer-bottom">
+            <div class="company-info">
+              <h3>(주)HODU SHOP</h3>
+              <address>
+                <p>제주특별자치도 제주시 동광고 137 제주코딩베이스캠프</p>
+                <p>사업자 번호 : 000-0000-0000 | 통신판매업</p>
+                <p>대표 : 김호두</p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
